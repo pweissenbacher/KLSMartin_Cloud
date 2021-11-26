@@ -1,5 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { Component, NgModule, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
