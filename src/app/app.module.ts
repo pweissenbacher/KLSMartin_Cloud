@@ -8,13 +8,15 @@ import { HeaderComponent } from './header/header.component';
 import { ApplicationsComponent } from './applications/applications.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from  '@angular/material/toolbar';
+import { BackgroundComponent } from './background/background.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    ApplicationsComponent
+    ApplicationsComponent,
+    BackgroundComponent
   ],
   imports: [
     BrowserModule,
