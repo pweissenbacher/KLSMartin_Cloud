@@ -3,18 +3,21 @@
         <img class="kastlimg" src="assets\Images\kastl.png">
     </button>
     <span>
-    <form>
-        <mat-form-field>
-            <mat-select placeholder="Application">
-                <mat-option>None</mat-option>
-                <mat-option value="1">option 1</mat-option>
-                <mat-option value="2">option 2</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput class="input" type="text" placeholder="Search">
-        </mat-form-field>
-    </form>
+        <form class="form">
+            <mat-form-field class="removeUnderline try" appearance="fill">
+                <mat-select placeholder="Application">
+                    <mat-option>None</mat-option>
+                    <mat-option value="1">option 1</mat-option>
+                    <mat-option value="2">option 2</mat-option>
+                </mat-select>
+            </mat-form-field>
+            |&nbsp;
+            <mat-form-field class="removeUnderline full-width">
+                <input matInput class="input" type="text" placeholder="Search">
+                    &nbsp;
+                <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+        </form>
     </span>
     <button class="alignright">
         <img class="profileimg" src="assets\Images\profile.png">
