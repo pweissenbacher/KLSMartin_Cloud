@@ -30,10 +30,10 @@ export interface Tile {
 })
 export class BackgroundComponent {
   tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 1, imgpath: 'kastlimg'},
-    {text: 'Two', cols: 1, rows: 1, imgpath: 'kastlimg'},
-    {text: 'Three', cols: 1, rows: 1, imgpath: 'kastlimg'},
-    {text: 'Four', cols: 1, rows: 1, imgpath: 'kastlimg'},
-    {text: 'Five', cols: 1, rows: 1, imgpath: 'kastlimg'}
+    {text: 'One', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
+    {text: 'Two', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
+    {text: 'Three', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
+    {text: 'Four', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
+    {text: 'Five', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'}
   ];
 }

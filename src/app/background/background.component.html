@@ -4,9 +4,8 @@
         <mat-grid-tile
             *ngFor="let tile of tiles"
             [colspan]="tile.cols"
-            [rowspan]="tile.rows"
-            [style.background.img]="tile.imgpath">>
-          {{tile.text}}
+            [rowspan]="tile.rows">
+            <img [src]="tile.imgpath" [alt]="tile.text" height="50%">
         </mat-grid-tile>
       </mat-grid-list>
 <!-- <style>
