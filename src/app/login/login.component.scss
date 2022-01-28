@@ -1,0 +1,25 @@
+body {
+    position: relative;
+}
+
+.middleInterface {     
+    width: 600px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* Hälfte der Breite */
+    margin-top: -200px;
+    /* Hälfte der Höhe */     
+    margin-left: -300px;     
+    background-color: grey;
+}
+
+
+html {
+    background-image:image-set('assets\Images\login_backround.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
