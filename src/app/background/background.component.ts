@@ -1,29 +1,12 @@
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-background',
-  templateUrl: './background.component.html',
-  styleUrls: ['./background.component.scss']
-})
-export class BackgroundComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}*/
-
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 export interface Tile {
-  imgpath: string;
   cols: number;
   rows: number;
   text: string;
+  imgpath: string;
 }
-
- @Component({
+@Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.scss']
@@ -43,7 +26,7 @@ export class BackgroundComponent {
     {text: 'Eleven', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
     {text: 'Twelve', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
     {text: 'Thirteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
-    {text: 'Fourteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
-
+    {text: 'Fourteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'}
   ];
 }
+
