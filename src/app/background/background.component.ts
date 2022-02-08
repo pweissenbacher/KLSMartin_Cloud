@@ -26,7 +26,8 @@ export class BackgroundComponent {
     {text: 'Eleven', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
     {text: 'Twelve', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
     {text: 'Thirteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
-    {text: 'Fourteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'}
+    {text: 'Fourteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
+    {text: 'Fifteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'}
   ];
 }
 
