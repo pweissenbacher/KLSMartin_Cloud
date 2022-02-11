@@ -1,25 +1,66 @@
-body {
-    position: relative;
-}
 
-.middleInterface {     
-    width: 600px;
+.centerInterface {     
+    width: 670px;
     height: 400px;
-    position: fixed;
+    position: absolute ;
     top: 50%;
     left: 50%;
-    /* Hälfte der Breite */
-    margin-top: -200px;
-    /* Hälfte der Höhe */     
-    margin-left: -300px;     
-    background-color: grey;
+    margin-top: -200px;  
+    margin-left: -335px;     
+    border-width:2px;
+    border-style:solid;
+    border-color: lightgrey;
+    text-align: center;
 }
 
-
-html {
-    background-image:image-set('assets\Images\login_backround.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+.background {
+    background-image: image('login_background.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.question_mark {
+    width: 2cm;
+    height: 2cm;
+}
+
+.email {
+    width: 100%;
+    ::ng-deep .mat-form-field-appearance-outline {
+        display: contents;
+    }
+    
+}
+
+.password {
+    width: 100%;
+    
+}
+
+.emailInput{
+    border-color: lightgrey;
+    width: 16.9cm;
+    margin-left: 0.2cm;
+    height: 50px;
+}
+
+.passwordInput{
+    border-color: lightgrey;
+    width: 16.9cm;
+    margin-left: 0.2cm;
+}
+
+.login_logo {
+    margin-top: 0.5cm;
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.background {
+    background-image: src("assets\Images\logo_KLSMartin.png");
+
 }
