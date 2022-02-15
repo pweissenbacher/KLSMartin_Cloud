@@ -17,14 +17,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
     ApplicationsComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

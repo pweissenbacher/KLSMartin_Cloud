@@ -48,6 +48,7 @@ span{
 .removeUnderline {
     ::ng-deep .mat-form-field-underline {
         display: none;
+        padding-left: 20%;
     }
 }
 
