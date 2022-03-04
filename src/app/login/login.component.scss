@@ -37,26 +37,18 @@
 
 .email {
     width: 100%;
-    ::ng-deep .mat-form-field-appearance-outline {
-        display: contents;
-    }
     text-align: center;
     
 }
 
 .password {
-    width: 100%;
-    text-align: center;
+    width: 95%;
+    text-align: left;
 }
 
-.emailInput{
-    border-color: lightgrey;
-    width: 16.9cm;
-}
-
-.passwordInput{
-    border-color: lightgrey;
-    width: 16.9cm;
+.email {
+    width: 95%;
+    text-align: left;
 }
 
 .login_logo {
@@ -78,7 +70,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     text-align: center;
 }
 
@@ -87,14 +79,38 @@
     text-align: center;
     color: black;
     text-align: center;
-    font-size: 17px;
+    font-size: 14px;
     padding: 0.7cm; 
+}
+
+.bottombar a:hover {
+    text-decoration: underline;
 }
 
 .submit {
     color: white;
     background-color: red;
-    width: 97.4%;
+    width: 95%;
     height: 1cm;
     font-size: medium;
+    border: 0;
+}
+
+.otherOptions #right {
+    float:right;
+    margin-right: 0.5cm;
+}
+
+.otherOptions #left {
+    float:left;
+    margin-left: 0.5cm;
+}
+
+.otherOptions {
+    color: red;
+}
+
+.otherOptions :hover {
+    color: black;
+    text-decoration: underline;
 }
