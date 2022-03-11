@@ -114,3 +114,15 @@
     color: black;
     text-decoration: underline;
 }
+
+a:hover {
+    cursor:alias;
+}
+
+mat-label {
+    font-size: medium;
+}
+
+input {
+    font-size: medium;
+}
