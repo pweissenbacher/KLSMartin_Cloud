@@ -1,5 +1,4 @@
 .input {
-    margin-left: 20%;
     margin-right: 20%;
 }
 
@@ -52,13 +51,15 @@ span{
     }
 }
 
-.form {
+.form_toolbar {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
     font-size: 60%;
     padding-left: 10px;
     padding-right: 10px;
+    min-height: 40px;
+    max-height: 80px;
 }
   
 .full-width {
