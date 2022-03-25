@@ -3,6 +3,7 @@ import { Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
 export interface User {
+  name: string;
   email: string;
   password: string;
 }
@@ -18,9 +19,9 @@ export class LoginComponent implements OnInit {
   public currentPassword: string = "";
 
   user: User[] = [
-    {email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1'},
-    {email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!'},
-    {email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?'}
+    {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1'},
+    {name: 'Herbert', email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!'},
+    {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?'}
   ]
 
   constructor() { }
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
     } ;*/
     for(var tmpUser of this.user){
       if( this.currentEmail === tmpUser.email && this.currentPassword === tmpUser.password) {
+        //Wie User Name am Dashboard anzeigen? - User in backgroundcomponente?
         console.log(true);
 
         window.open('/dashboard', '_self');    }
