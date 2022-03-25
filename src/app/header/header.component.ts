@@ -13,4 +13,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public logout(){
+   // window.open(document.URL, 'app-login', 'location=yes,height=device-height,width=device-width,scrollbars=yes,status=yes');
+    window.open('/login', '_self');
+  }
+
 }
