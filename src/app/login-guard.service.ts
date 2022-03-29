@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from './services/user.service';
 
@@ -8,15 +8,16 @@ import { UserService } from './services/user.service';
 })
 export class LoginGuardService {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private router: Router) { }
 
   public canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     console.log(this.userService.getLoggedInUser());
-    if(this.userService.getLoggedInUser()!=null) {
-      window.open('/dashboard', '_self');
+
+    if(this.userService.getLoggedInUser() != null) {
       return true;
     }
-    window.open('/login', '_self');
+    this.router.navigate(['login']);
     return false;
   }
 

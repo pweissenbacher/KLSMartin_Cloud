@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { UserService } from '../services/user.service';
+import {Router} from "@angular/router";
+import {BackgroundComponent} from "../background/background.component";
 
 export class User {
   public name: string = '';
@@ -25,7 +27,9 @@ export class LoginComponent implements OnInit {
     {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?'}
   ]
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -40,20 +44,15 @@ export class LoginComponent implements OnInit {
       if( this.currentEmail === tmpUser.email && this.currentPassword === tmpUser.password) {
         //Wie User Name am Dashboard anzeigen? - User in backgroundcomponente?
         this.userService.setLoggedInUser(tmpUser);
-        console.log(true);
-        setTimeout(()=>{
-          window.open('/dashboard', '_self');}, 1000)
+        this.router.navigate(['dashboard']);
         return;
       } else {
-        console.log(tmpUser.email + " " + tmpUser.password)
-        console.log(this.currentEmail + " " + this.currentPassword);
-        console.log(false);
         continue;
       }
     }
     alert("Invalid Login!");
 
-    
+
 
   }
 }
