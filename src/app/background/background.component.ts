@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 export interface Tile {
   cols: number;
@@ -29,5 +30,11 @@ export class BackgroundComponent {
     {text: 'Fourteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'},
     {text: 'Fifteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'}
   ];
+
+  constructor(private userService: UserService) {
+    console.log(userService.getLoggedInUser());
+    
+
+  }
 }
 
