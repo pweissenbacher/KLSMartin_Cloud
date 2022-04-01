@@ -31,9 +31,11 @@ export class BackgroundComponent {
     {text: 'Fifteen', cols: 1, rows: 1, imgpath: 'assets\\Images\\kastl.png'}
   ];
 
+  username: string;
+
   constructor(private userService: UserService) {
     console.log(userService.getLoggedInUser());
-    
+    this.username = userService.getLoggedInUser().name;
 
   }
 }

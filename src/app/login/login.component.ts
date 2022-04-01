@@ -9,6 +9,12 @@ export class User {
   public name: string = '';
   public email: string = '';
   public password: string = '';
+  public application: Application[] =[];
+}
+
+export class Application {
+  public id: string = "";
+  public name: string = "";
 }
 
 @Component({
@@ -22,9 +28,10 @@ export class LoginComponent implements OnInit {
   public currentPassword: string = "";
 
   user: User[] = [
-    {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1'},
-    {name: 'Herbert', email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!'},
-    {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?'}
+    {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1', application: [{id: '1', name: 'ka'}, {id: '2', name: 'stillka'}]},
+    {name: 'Herbert', email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!', application: [{id: '1', name: 'ka'}]},
+    {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?', application: [{id: '1', name: 'ka'}]},
+    {name: 'a', email: 'a@a', password: 'abc', application: []}
   ]
 
   constructor(
@@ -51,8 +58,6 @@ export class LoginComponent implements OnInit {
       }
     }
     alert("Invalid Login!");
-
-
 
   }
 }

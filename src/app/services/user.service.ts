@@ -5,8 +5,10 @@ import { User } from '../login/login.component';
   providedIn: 'root'
 })
 export class UserService {
-  private loggedInUser: any;
-  constructor() { }
+  private loggedInUser: User;
+  constructor() {
+    this.loggedInUser = this.getLoggedInUser();
+  }
 
   public getLoggedInUser() {
     return this.loggedInUser;
