@@ -9,12 +9,13 @@ export class User {
   public name: string = '';
   public email: string = '';
   public password: string = '';
-  public application: Application[] =[];
+  public applicationIDs: string[] = [];
 }
 
 export class Application {
-  public id: string = "";
-  public name: string = "";
+  public id: string = '';
+  public name: string = '';
+  public imgpath: string = '';
 }
 
 @Component({
@@ -28,10 +29,10 @@ export class LoginComponent implements OnInit {
   public currentPassword: string = "";
 
   user: User[] = [
-    {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1', application: [{id: '1', name: 'ka'}, {id: '2', name: 'stillka'}]},
-    {name: 'Herbert', email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!', application: [{id: '1', name: 'ka'}]},
-    {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?', application: [{id: '1', name: 'ka'}]},
-    {name: 'a', email: 'a@a', password: 'abc', application: []}
+    {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1', applicationIDs: ['1', '2', '3', '4', '5', '6', '7']},
+    {name: 'Herbert', email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!', applicationIDs: ['1', '2', '3', '4']},
+    {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?', applicationIDs: ['1', '2', '4', '5']},
+    {name: 'a', email: 'a@a', password: 'abc', applicationIDs: ['1', '2', '4', '5']}
   ]
 
   constructor(
