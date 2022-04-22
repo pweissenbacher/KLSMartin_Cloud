@@ -1,4 +1,3 @@
-
 .centerInterface {     
     width: 670px;
     height: 400px;
@@ -14,31 +13,23 @@
     text-align: center;
 }
 
-.background {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.login_logo {
+    margin-top: 1%;
+    position: absolute;
+    left: 45.3%;  
+    width: 50%;
+    width: 9.5%;
+}
 
-    opacity:0.8;
-    background-color:#ccc;
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;
-    z-index:1000;
+.backgroundPicture {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .question_mark {
-    width: 2cm;
-    height: 2cm;
-}
-
-.email {
-    width: 100%;
-    text-align: center;
-    
+    width: 12%;
+    height: 20%;
 }
 
 .password {
@@ -51,22 +42,9 @@
     text-align: left;
 }
 
-.login_logo {
-    margin-top: 0.5cm;
-    width: 175px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.background {
-    background-image: src("assets\Images\logo_KLSMartin.png");
-
-}
-
 .bottombar{
-    position: fixed;
-    height: 0.9cm;
+    position: absolute;
+    height: 3.5%;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -78,7 +56,6 @@
     display: inline;
     text-align: center;
     color: black;
-    text-align: center;
     font-size: 14px;
     padding: 0.7cm; 
 }
@@ -96,14 +73,18 @@
     border: 0;
 }
 
+.submit:hover {
+    background-color: gray;
+}
+
 .otherOptions #right {
     float:right;
-    margin-right: 0.5cm;
+    margin-right: 3%;
 }
 
 .otherOptions #left {
     float:left;
-    margin-left: 0.5cm;
+    margin-left: 3%;
 }
 
 .otherOptions {
@@ -116,7 +97,7 @@
 }
 
 a:hover {
-    cursor:alias;
+    cursor:pointer;
 }
 
 mat-label {
