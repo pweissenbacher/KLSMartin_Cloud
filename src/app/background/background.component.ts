@@ -57,11 +57,8 @@ export class BackgroundComponent implements OnInit {
 
   public initializeTiles() {
     for(var app of this.applications){
-      //console.log('in 1ter for');
       for(var appID of this.user.applicationIDs) {
-        //console.log('in 2ter for');
         if(app.id==appID) {
-          //console.log('im If');
           let newTile = new Tile();
           newTile.application = app;
           newTile.cols = 1;
