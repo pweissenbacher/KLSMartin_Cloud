@@ -1,26 +1,31 @@
-<mat-toolbar class="background">
-    <button>
-        <img class="kastlimg" src="assets\Images\kastl.png">
+<mat-toolbar class="background" style="width: 100%;">
+    
+    <button style="margin-right: 350px;">
+        <img class="kastlimg" src="assets\Images\kastl.png" style="width: 25px; height: 25px;">
     </button>
-    <span>
-        <form class="form">
-            <mat-form-field class="removeUnderline try" appearance="fill">
-                <mat-select placeholder="Application">
-                    <mat-option>None</mat-option>
-                    <mat-option value="1">option 1</mat-option>
-                    <mat-option value="2">option 2</mat-option>
-                </mat-select>
-            </mat-form-field>
-            |&nbsp;
-            <mat-form-field class="removeUnderline full-width">
-                <input matInput class="input" type="text" placeholder="Search">
-                    &nbsp;
-                <mat-icon matSuffix>mode_edit</mat-icon>
-            </mat-form-field>
+
+    <img class="kastlimg" src="assets\Images\kastl.png" style="width: 25px; height: 25px;">
+    
+
+    <div>
+        <form class="form" style="width: 550%">
+                <mat-form-field class="removeUnderline try" style="border-right-style: solid; border-width: 1px; border-color: grey;">
+                    <mat-select placeholder="Application" style="-ms-grid-row-span: calc();">
+                        <mat-option>None</mat-option>
+                        <mat-option value="1">option 1</mat-option>
+                        <mat-option value="2">option 2</mat-option>
+
+                    </mat-select>
+                </mat-form-field>        
+                
+                <mat-form-field class="removeUnderline full-width">
+                    <input matInput class="input" type="text" placeholder="Search">
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field>
         </form>
-    </span>
-    <button class="alignright">
+
+    </div>    
+    <button class onclick="window.open(document.URL, 'app-login', 'location=yes,height=device-height,width=device-width,scrollbars=yes,status=yes');">
         <img class="profileimg" src="assets\Images\profile.png">
     </button>
 </mat-toolbar>
-
