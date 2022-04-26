@@ -1,6 +1,6 @@
 <div>
-    <app-header></app-header>
-    <app-background></app-background>
+    <app-header (output) = "outputMain($event)"></app-header>
+    <app-background [input] = "searchApplicationName"></app-background>
     <app-applications></app-applications>
 </div>
 

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  public searchApplicationName: string = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public outputMain(searchApplicationNameInput: string){
+    this.searchApplicationName = searchApplicationNameInput;
+  }
 }

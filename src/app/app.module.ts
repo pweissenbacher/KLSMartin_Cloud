@@ -13,9 +13,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatSelectModule } from '@angular/material/select'; 
-
-import {MatGridListModule} from '@angular/material/grid-list';
+import {MatGridListModule} from '@angular/material/grid-list'; 
 import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,6 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ApplicationsComponent,
     BackgroundComponent,
-    
   ],
   
   imports: [
@@ -35,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

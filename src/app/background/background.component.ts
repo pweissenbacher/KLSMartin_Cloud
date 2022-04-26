@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Application, User } from '../login/login.component';
 import { UserService } from '../services/user.service';
 
@@ -15,6 +15,8 @@ export class Tile {
 export class BackgroundComponent implements OnInit {
   user: User;
   username: string;
+
+  @Input() input = "";
 
   constructor(private userService: UserService) {
     console.log(userService.getLoggedInUser());
