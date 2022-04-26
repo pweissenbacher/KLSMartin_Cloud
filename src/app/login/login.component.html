@@ -1,25 +1,43 @@
 <body>
-    <div [ngStyle]="{'background' : 'url(./assets/Images/login_background.jpg)'}">
+    <div class="background">
+        <img class="backgroundPicture" src="/assets/Images/login_background.jpg">
         <img class="login_logo" src="assets\Images\logo_KLSMartin.png">
+    
         <div class="centerInterface">
-            <h1>KLS Martin Cloud</h1>
+            <br>
             <img class="question_mark" src="assets\Images\question_mark.png">
-            <br><br>
+            <br>
+            <h1>KLS Martin Cloud</h1>
+            
             <form class="form">
                 <mat-form-field class="email" appearance="outline">
-                    <mat-label>Enter your E-Mail</mat-label>
-                    <input matInput placeholder="E-Mail *" class="passwordInput">
-                    <mat-hint>Hint</mat-hint>
+                    <mat-label>E-Mail *</mat-label>
+                    <input matInput type="text" class="passwordInput" [(ngModel)]="currentEmail" name="currentEmail">
                 </mat-form-field>
 
-                <br><br>
+                <br>
 
                 <mat-form-field class="password" appearance="outline">
-                    <mat-label>Outline form field</mat-label>
-                    <input matInput placeholder="Passwort *" class="passwordInput">
-                    <mat-hint>Hint</mat-hint>
+                    <mat-label>Password *</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="currentPassword" name="currentPassword">    
                 </mat-form-field>
+
+                <button class="submit" (click)="login()">Login</button>
+                
+                <br><br>
+
+                <div class="otherOptions">
+                    <a id="right">Forgot Password?</a>
+                    <a id="left">Not a Member yet?</a>
+                </div>
+
             </form>
+
+        </div>
+        <div class="bottombar">
+            <a>Privacy</a>
+            <a>Terms & Conditions</a>
+            <a>Imprint</a>
         </div>
     </div>
 </body>
