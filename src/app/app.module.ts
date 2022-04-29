@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
+import { ApplicationListComponent } from './application-list/application-list.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     MainComponent,
     HeaderComponent,
     BackgroundComponent,
+    ApplicationListComponent,
     
   ],
   
