@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
   public currentPassword: string = "";
 
   user: User[] = [
-    {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1', applicationIDs: ['1', '2', '3', '4', '5', '6', '7']},
-    {name: 'Herbert', email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!', applicationIDs: ['1', '2', '3', '4']},
-    {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?', applicationIDs: ['1', '2', '4', '5']},
-    {name: 'a', email: 'a@a', password: 'abc', applicationIDs: ['1', '2', '4', '5']}
+    {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1', applicationIDs: ['0', '1', '2', '3', '4', '5', '6']},
+    {name: 'Herbert', email: 'herbert.huber@gmail.com', password: 'JavaIstToll123!', applicationIDs: ['0', '1', '2', '4']},
+    {name: 'Manuel', email: 'rainer.maunel@outlook.com', password: 'AnuglarNichtAngola?', applicationIDs: ['0', '1', '2', '3']},
+    {name: 'a', email: 'a@a', password: 'abc', applicationIDs: ['0', '1', '3', '4']}
   ]
 
   constructor(

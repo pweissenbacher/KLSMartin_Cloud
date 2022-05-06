@@ -1,5 +1,5 @@
 import { NgForOf } from '@angular/common';
-import { Component, EventEmitter, NgModule, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, NgModule, OnInit} from '@angular/core';
 import { ApplogicService } from '../services/applogic.service';
 import { UserService } from '../services/user.service';
 import { CommonModule } from '@angular/common';
@@ -14,8 +14,6 @@ import { FormsModule } from '@angular/forms';
 
 export class HeaderComponent implements OnInit {
   public searchApplicationName: string = "";
-
-  @Output() output = new EventEmitter<string>();
 
   user: User[] = [
     {name: 'Lena', email: '20181056@students.htl-perg.ac.at', password: 'asdf!jklöl1', applicationIDs: ['1', '2', '3', '4', '5', '6', '7']},
@@ -73,8 +71,8 @@ export class HeaderComponent implements OnInit {
       }
     }
     */
-   
-   this.output.emit(this.searchApplicationName);
+  
+   this.applogic.sendStartSearchFunction(this.searchApplicationName);
   }
 }
 
