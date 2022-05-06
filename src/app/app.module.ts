@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
 import { BackgroundComponent } from './background/background.component';
 
 import {MatInputModule} from '@angular/material/input';
@@ -38,7 +41,9 @@ import { ApplicationListComponent } from './application-list/application-list.co
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
