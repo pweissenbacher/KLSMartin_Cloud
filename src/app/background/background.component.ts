@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Application, User } from '../login/login.component';
 import { UserService } from '../services/user.service';
+import { ApplicationsService } from '../services/applications.service';
 
 export class Tile {
   application: Application = new Application();
@@ -16,27 +17,19 @@ export class BackgroundComponent implements OnInit {
   user: User;
   username: string;
   success: boolean;
+  applications: Application[];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private applicationsService: ApplicationsService) {
     console.log(userService.getLoggedInUser());
     this.user = userService.getLoggedInUser();
     this.username = userService.getLoggedInUser().name;
     this.success = false;
+    this.applications = applicationsService.getApplications();
   }
   ngOnInit(): void {
     this.initializeTiles();
     this.imageWhenEmpty();
   }
-
-  applications: Application[] = [
-    {id: '1', name: 'IPS Gate', imgpath: 'assets\\Images\\question_mark.png'},
-    {id: '2', name: 'IPS Automation Module', imgpath: 'assets\\Images\\IPSAutomation.png'},
-    {id: '3', name: 'IPS Orthognathic Module', imgpath: 'assets\\Images\\IPSOrthognathic.png'},
-    {id: '4', name: 'IPS Reconstruction Module', imgpath: 'assets\\Images\\question_mark.png'},
-    {id: '5', name: 'IPS Review Module', imgpath: 'assets\\Images\\question_mark.png'},
-    {id: '6', name: 'IPS Mission Control', imgpath: 'assets\\Images\\IPSMission.png'},
-    {id: '7', name: 'Log Gate', imgpath: 'assets\\Images\\IPSLogGate.png'}
-  ]
 
   tiles: Tile[] = [
     /*{application: this.applications[0], cols: 1, rows: 1},
