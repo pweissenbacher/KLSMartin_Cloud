@@ -66,6 +66,7 @@ export class BackgroundComponent implements OnInit {
           newTile.cols = 1;
           newTile.rows = 1;
           this.tiles.push(newTile);
+          this.success=true;
         }
         
       }
