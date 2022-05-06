@@ -3,7 +3,7 @@
 <span class="space"><img src="assets\Images\settings.png" class="monitoricon">My Applications</span>
 <mat-list *ngFor="let app of applications">
     <mat-list-item>
-        <img [src]="app.imgpath" [alt]="app.name" clas="tile-img">
+        <img class = "appPictures" [src]="app.imgpath" [alt]="app.name" clas="tile-img">
         {{app.name}}
     </mat-list-item>
     <mat-divider></mat-divider>
