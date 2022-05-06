@@ -1,12 +1,18 @@
 <br>
 <div class="background">
-<span class="space"><img src="assets\Images\settings.png" class="monitoricon">My Applications</span>
-<mat-list *ngFor="let app of applications">
-    <mat-list-item>
-        <img class = "appPictures" [src]="app.imgpath" [alt]="app.name">
-        {{app.name}}
-        <button><img src="assets\Images\icon_plus.png" alt="add"></button>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-</mat-list>
+    <span class="space"><img src="assets\Images\settings.png" class="monitoricon">My Applications</span>
+    <mat-list *ngFor="let app of applications">
+        <mat-list-item>
+            <img class="appPictures" [src]="app.imgpath" [alt]="app.name">
+            {{app.name}}
+            &nbsp;&nbsp;
+        </mat-list-item>
+
+        <div class="align-right">
+        <mat-list-item>
+            <button class="plusButton"><img src="assets\Images\round_plus.png"></button>
+        </mat-list-item>
+    </div>
+        <mat-divider></mat-divider>
+    </mat-list>
 </div>
