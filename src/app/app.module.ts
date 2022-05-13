@@ -7,16 +7,13 @@ import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from  '@angular/material/toolbar';
-
 import { BackgroundComponent } from './background/background.component';
-
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSelectModule} from '@angular/material/select';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'; 
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatSelectModule } from '@angular/material/select'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
 import { FormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -24,7 +21,6 @@ import { FormsModule } from '@angular/forms';
     MainComponent,
     HeaderComponent,
     BackgroundComponent,
-    
   ],
   
   imports: [
@@ -36,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
