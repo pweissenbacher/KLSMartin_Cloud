@@ -108,33 +108,7 @@ export class BackgroundComponent implements OnInit, OnDestroy {
       this.tiles = this.tilesSearched;
       this.tilesSearched = [];
     }
-  }
-
-  public initializeSearchedTiles(value: string)  {
-    const user = this.userService.getLoggedInUser();
-    const applications = this.applogic.getApplications();
-    
-    for (let i = 0; i < user.applicationIDs[i].length; i++) {
-      console.log(applications[Number(user.applicationIDs[i])].name + " & " + value);
-      //if(value == '')
-      if(applications[Number(user.applicationIDs[i])].name.includes(value)){
-        console.log(i);
-        console.log('Name: ' + applications[Number(user.applicationIDs[i])].name + 
-                    ' ID: ' + applications[Number(user.applicationIDs[i])].id + 
-                    ' ImgPath: ' + applications[Number(user.applicationIDs[i])].imgpath);
-
-          let newTile = new Tile();
-          newTile.application = applications[Number(user.applicationIDs[i])];
-          newTile.cols = 1;
-          newTile.rows = 1;
-          this.tilesSearched.push(newTile);
-      }
-    }
-  }
-
-
-  
+  }  
 }
-
 
 
