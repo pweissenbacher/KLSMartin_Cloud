@@ -1,16 +1,15 @@
 <br>
 <div class="background">
     <span class="space"><img src="assets\Images\settings.png" class="monitoricon">Available Applications</span>
-    <mat-list *ngFor="let app of applications">
-        <mat-list-item>
-            <img class="appPictures" [src]="app.imgpath" [alt]="app.name">
-            {{app.name}}
-            &nbsp;&nbsp;
-        </mat-list-item>
-        <div class="align-right">
-            <button class="plusButton" (click)="addApplication(app.id)"><img src="assets\Images\round_plus.png"></button>
-        </div>
-        
+  
+    <br><br>
+
+    <mat-nav-list class="rowApp" *ngFor="let app of applications">
+        <img class="appPictures" [src]="app.imgpath" [alt]="app.name">
+        <span class="appNames" matLine>{{app.name}}</span>
+        <button class="plusButton" mat-icon-button (click)="addApplication(app.id)" style="float: right;">
+            <mat-icon>add</mat-icon>
+        </button>
         <mat-divider></mat-divider>
-    </mat-list>
+    </mat-nav-list>
 </div>

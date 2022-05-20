@@ -22,15 +22,24 @@
 .appPictures {
     width: 1.8%;
     top: 50%;
+    margin-left: 1%;
     padding-right: 1.4%;
 }
-.align-right{
-    float: right;
-    margin-right: 1.5%;
+
+.appNames {
+    bottom: 50%;
 }
 
 .plusButton {
-    background-color: white;
+    margin-right: 1%;
     border: none;
-    outline: none;
+    background: none;
+}
+
+.plusButton:hover {
+    background-color: lightgray;
+}
+
+.plusButton:active {
+    background-color: lightcoral;
 }
