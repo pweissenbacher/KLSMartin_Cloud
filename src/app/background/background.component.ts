@@ -14,21 +14,23 @@ export class Tile {
   styleUrls: ['./background.component.scss']
 })
 export class BackgroundComponent implements OnInit {
-  user: User;
-  username: string;
+  user = new User();
+  username: string = "";
   success: boolean;
   applications: Application[];
 
   constructor(private userService: UserService, private applicationsService: ApplicationsService) {
     console.log(userService.getLoggedInUser());
-    this.user = userService.getLoggedInUser();
-    this.username = userService.getLoggedInUser().name;
     this.success = false;
     this.applications = applicationsService.getApplications();
   }
   ngOnInit(): void {
-    this.initializeTiles();
-    this.imageWhenEmpty();
+    this.userService.loggedInUserObservable.subscribe((user: User) => {
+      this.user = user;
+      this.username = this.userService.getLoggedInUser().name;
+      this.initializeTiles();
+      this.imageWhenEmpty();
+    });
   }
 
   tiles: Tile[] = [
