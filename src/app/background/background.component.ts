@@ -1,23 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Application, User } from '../login/login.component';
 import { UserService } from '../services/user.service';
 import { ApplicationsService } from '../services/applications.service';
+import { MatMenu, MatMenuTrigger, MatMenuModule } from '@angular/material/menu';
+import { trigger } from '@angular/animations';
+
 
 export class Tile {
   application: Application = new Application();
   cols: number = 1;
   rows: number = 1;
 }
+
+
 @Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.scss']
 })
 export class BackgroundComponent implements OnInit {
+  //@ViewChild(MatMenuTrigger) matMenuTrigger: MatMenuTrigger;
+
+
   user = new User();
   username: string = "";
   success: boolean;
   applications: Application[];
+  @ViewChild(MatMenuTrigger)
+  trigger!: MatMenuTrigger;
+  menuTopLeftPosition = {x: 0, y: 0};
+
+    
+  
 
   constructor(private userService: UserService, private applicationsService: ApplicationsService) {
     console.log(userService.getLoggedInUser());
@@ -53,6 +67,7 @@ export class BackgroundComponent implements OnInit {
   
 
   public initializeTiles() {
+    this.tiles = [];
     for(var app of this.applications){
       for(var appID of this.user.applicationIDs) {
         if(app.id==appID) {
@@ -79,6 +94,18 @@ export class BackgroundComponent implements OnInit {
       this.tiles.push(newTile);
    }
  }
+  public onRightClick(event: MouseEvent) {
+    event.preventDefault();
+    this.menuTopLeftPosition.x = event.clientX;
+    this.menuTopLeftPosition.y = event.clientY;
+
+    this.trigger.menuData = 'Delete';
+
+    this.trigger.openMenu();
+  }
+
 }
+
+
 
 
