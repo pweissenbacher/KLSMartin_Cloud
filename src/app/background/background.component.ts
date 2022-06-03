@@ -98,15 +98,16 @@ export class BackgroundComponent implements OnInit {
     this.menuTopLeftPosition.x = event.clientX;
     this.menuTopLeftPosition.y = event.clientY;
     console.log(this.menuTopLeftPosition.x)
-    this.trigger.menuData = {item: {content: 'test', name: name}};
+    this.trigger.menuData = {item: {content: 'Delete', id: name}};
     this.trigger.openMenu();
   }
 
   public deleteApplication(id: string){
     for(let tmpAppID of this.user.applicationIDs) {
+      console.log(tmpAppID + ": " + id);
       if(tmpAppID===id) {
-        this.user.applicationIDs[this.user.applicationIDs.indexOf(tmpAppID)]=this.user.applicationIDs[this.user.applicationIDs.length-1]
-        //indexOf()=this.user.applicationIDs[this.user.applicationIDs.length-1];
+        console.log(id + ": " + this.user.applicationIDs.indexOf(tmpAppID));
+        this.user.applicationIDs[this.user.applicationIDs.indexOf(tmpAppID)]=this.user.applicationIDs[this.user.applicationIDs.length-1];
         this.user.applicationIDs[this.user.applicationIDs.length-1]=id;
         this.user.applicationIDs.pop();
       }
