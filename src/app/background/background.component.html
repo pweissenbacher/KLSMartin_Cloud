@@ -18,7 +18,10 @@
 </div>
 <mat-menu #rightMenu="matMenu">
     <ng-template matMenuContent let-item="item">
-        <button mat-menu-item (click)="deleteApplication(item.id)">{{item.content}}</button>
+        <button mat-menu-item (click)="deleteApplication(item.id)">
+            <mat-icon>clear</mat-icon>
+            {{item.content}}
+        </button>
     </ng-template>
 </mat-menu>
 </div>
