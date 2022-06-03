@@ -19,15 +19,13 @@ export class Tile {
   styleUrls: ['./background.component.scss']
 })
 export class BackgroundComponent implements OnInit {
-  //@ViewChild(MatMenuTrigger) matMenuTrigger: MatMenuTrigger;
 
 
   user = new User();
   username: string = "";
   success: boolean;
   applications: Application[];
-  @ViewChild(MatMenuTrigger)
-  trigger!: MatMenuTrigger;
+  @ViewChild(MatMenuTrigger)trigger!: MatMenuTrigger;
   menuTopLeftPosition = {x: 0, y: 0};
 
     
@@ -98,8 +96,8 @@ export class BackgroundComponent implements OnInit {
     event.preventDefault();
     this.menuTopLeftPosition.x = event.clientX;
     this.menuTopLeftPosition.y = event.clientY;
-
-    this.trigger.menuData = 'Delete';
+    console.log(this.menuTopLeftPosition.x)
+    this.trigger.menuData = {item: {content: 'test'}};
 
     this.trigger.openMenu();
   }
