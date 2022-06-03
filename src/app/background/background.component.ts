@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service';
 import { ApplicationsService } from '../services/applications.service';
 import { MatMenu, MatMenuTrigger, MatMenuModule } from '@angular/material/menu';
 import { trigger } from '@angular/animations';
+//import { stringify } from 'querystring';
 
 
 export class Tile {
@@ -92,18 +93,27 @@ export class BackgroundComponent implements OnInit {
       this.tiles.push(newTile);
    }
  }
-  public onRightClick(event: MouseEvent) {
+  public onRightClick(event: MouseEvent, name: String) {
     event.preventDefault();
     this.menuTopLeftPosition.x = event.clientX;
     this.menuTopLeftPosition.y = event.clientY;
     console.log(this.menuTopLeftPosition.x)
-    this.trigger.menuData = {item: {content: 'test'}};
+    this.trigger.menuData = {item: {content: 'test', name: name}};
 
     this.trigger.openMenu();
   }
 
+  public deleteApplication(id: string){
+    for(let tmpAppID of this.user.applicationIDs) {
+      if(tmpAppID===id) {
+        this.user.applicationIDs[this.user.applicationIDs.indexOf(tmpAppID)]=this.user.applicationIDs[this.user.applicationIDs.length-1]
+        //indexOf()=this.user.applicationIDs[this.user.applicationIDs.length-1];
+        this.user.applicationIDs[this.user.applicationIDs.length-1]=id;
+        this.user.applicationIDs.pop();
+      }
+    }
+    console.log(this.user.applicationIDs)
+    this.userService.setLoggedInUser(this.user);
+  }
 }
-
-
-
 

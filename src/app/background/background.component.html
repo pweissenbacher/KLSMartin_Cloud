@@ -6,6 +6,7 @@
     <mat-grid-tile
     (contextmenu)="onRightClick($event)"
         *ngFor="let tile of tiles"
+        (contextmenu)="onRightClick($event, tile.application.id)"
         [colspan]="tile.cols"
         [rowspan]="tile.rows">
         
@@ -18,7 +19,7 @@
 </div>
 <mat-menu #rightMenu="matMenu">
     <ng-template matMenuContent let-item="item">
-        <button mat-menu-item>{{item.content}}</button>
+        <button mat-menu-item (click)="deleteApplication(item.id)">{{item.content}}</button>
     </ng-template>
 </mat-menu>
 </div>
