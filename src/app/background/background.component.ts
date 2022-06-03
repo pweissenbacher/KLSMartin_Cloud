@@ -99,7 +99,6 @@ export class BackgroundComponent implements OnInit {
     this.menuTopLeftPosition.y = event.clientY;
     console.log(this.menuTopLeftPosition.x)
     this.trigger.menuData = {item: {content: 'test', name: name}};
-
     this.trigger.openMenu();
   }
 
