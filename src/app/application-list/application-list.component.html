@@ -7,9 +7,22 @@
     <mat-nav-list class="rowApp" *ngFor="let app of applications">
         <img class="appPictures" [src]="app.imgpath" [alt]="app.name">
         <span class="appNames" matLine>{{app.name}}</span>
+        
+        <div *ngIf="user.applicationIDs.includes(app.id); else elseBlock">
+            <mat-icon class="align-right">done</mat-icon>
+            <!--<img [src]='assets\Images\settings.png' [alt]="Requested">-->    
+        </div>
+
+        <ng-template #elseBlock>
+            <mat-icon class="align-right">clear</mat-icon>
+            <!--<img [src]='assets\Images\question_mark.png' [alt]="notRequested"-->
+        </ng-template>    
+        
+        <!--<div>{{user.applicationIDs.includes(app.id) ? '<img [src]='assets\Images\question_mark.png' [alt]="Requested">':'Not Requested'}}</div>-->
         <button class="plusButton" mat-icon-button (click)="addApplication(app.id)" style="float: right;">
             <mat-icon>add</mat-icon>
         </button>
+
         <mat-divider></mat-divider>
     </mat-nav-list>
 </div>
