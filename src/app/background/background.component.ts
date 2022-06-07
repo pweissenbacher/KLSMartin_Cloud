@@ -82,7 +82,7 @@ export class BackgroundComponent implements OnInit {
       
     }
   }
- public imageWhenEmpty(){
+  public imageWhenEmpty(){
    if(!this.success){
       let newTile = new Tile();
       newTile.cols = 5;

@@ -13,13 +13,14 @@ import { UserService } from '../services/user.service';
 //Minus bei vorhandenen Applications??
 export class ApplicationListComponent implements OnInit {
 
-  private user: User;
+  public user: User;
   
   applications: Application[];
   constructor(private applicatonsService: ApplicationsService, private userService: UserService) {
     this.applications = applicatonsService.getApplications();
     this.user = userService.getLoggedInUser();
-   }
+  }
+
   ngOnInit(): void {
   }
 
@@ -30,6 +31,7 @@ export class ApplicationListComponent implements OnInit {
         return;
       }
     }
+
     for(let app of this.applications) {
       if(id==app.id) {
         this.user.applicationIDs.push(id);
@@ -37,4 +39,11 @@ export class ApplicationListComponent implements OnInit {
     }
     this.userService.setLoggedInUser(this.user);
   }
+
+  setRequested(applicationID: String){
+          
+
+  }
 }
+
+
