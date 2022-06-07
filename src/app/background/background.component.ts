@@ -1,10 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Application, User } from '../login/login.component';
+import { ApplogicService } from '../services/applogic.service';
 import { UserService } from '../services/user.service';
 import { ApplicationsService } from '../services/applications.service';
 import { MatMenu, MatMenuTrigger, MatMenuModule } from '@angular/material/menu';
 import { trigger } from '@angular/animations';
 //import { stringify } from 'querystring';
+import { Subscription } from 'rxjs';
 
 
 export class Tile {
@@ -17,14 +19,14 @@ export class Tile {
 @Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
+               //'<app-header []="headerProperty"></app-header>',
   styleUrls: ['./background.component.scss']
 })
-export class BackgroundComponent implements OnInit {
+export class BackgroundComponent implements OnInit, OnDestroy {
 
 
   user = new User();
   username: string = "";
-  success: boolean;
   applications: Application[];
   @ViewChild(MatMenuTrigger)trigger!: MatMenuTrigger;
   menuTopLeftPosition = {x: 0, y: 0};
@@ -32,11 +34,19 @@ export class BackgroundComponent implements OnInit {
     
   
 
-  constructor(private userService: UserService, private applicationsService: ApplicationsService) {
+  searchApplicationSubscription: Subscription;  
+  constructor(private userService: UserService, private applogic: ApplogicService) {
     console.log(userService.getLoggedInUser());
-    this.success = false;
-    this.applications = applicationsService.getApplications();
+    
+    this.user = userService.getLoggedInUser();
+    this.username = userService.getLoggedInUser().name;
+
+    this.searchApplicationSubscription = this.applogic.getInputInsertetEvent().subscribe((value: string) =>{
+      console.log(value);
+      this.initializeTiles(value);
+    })
   }
+
   ngOnInit(): void {
     this.userService.loggedInUserObservable.subscribe((user: User) => {
       this.user = user;
@@ -44,6 +54,10 @@ export class BackgroundComponent implements OnInit {
       this.initializeTiles();
       this.imageWhenEmpty();
     });
+  }
+
+  ngOnDestroy(): void {
+    this.searchApplicationSubscription.unsubscribe();
   }
 
   tiles: Tile[] = [
@@ -63,23 +77,55 @@ export class BackgroundComponent implements OnInit {
     {application: this.applications[0], cols: 1, rows: 1}*/
   ];
 
-  
+  tilesSearched: Tile[] = [
+    /*{application: this.applications[0], cols: 1, rows: 1},
+    {application: this.applications[1], cols: 1, rows: 1},
+    {application: this.applications[2], cols: 1, rows: 1},
+    {application: this.applications[0], cols: 1, rows: 1},
+    {application: this.applications[1], cols: 1, rows: 1},
+    {application: this.applications[2], cols: 1, rows: 1},
+    {application: this.applications[0], cols: 1, rows: 1},
+    {application: this.applications[1], cols: 1, rows: 1},
+    {application: this.applications[2], cols: 1, rows: 1},
+    {application: this.applications[0], cols: 1, rows: 1},
+    {application: this.applications[1], cols: 1, rows: 1},
+    {application: this.applications[1], cols: 1, rows: 1},
+    {application: this.applications[2], cols: 1, rows: 1},
+    {application: this.applications[0], cols: 1, rows: 1}*/
+  ];
 
-  public initializeTiles() {
-    this.tiles = [];
-    for(var app of this.applications){
-      for(var appID of this.user.applicationIDs) {
-        if(app.id==appID) {
+  public initializeTiles(value: string = '') {
+    if(value == ''){
+      this.tiles = [];
+      
+      for(var app of this.applogic.getApplications()){
+        for(var appID of this.user.applicationIDs) {   
+          if(app.id == appID) {
+            let newTile = new Tile();
+            newTile.application = app;
+            newTile.cols = 1;
+            newTile.rows = 1;
+            this.tiles.push(newTile);
+          }
+        } 
+      }
+    }else{
+      const user = this.userService.getLoggedInUser();
+      const applicationsT = this.applogic.getApplications();
+      this.tiles = [];
+
+      for (let i = 0; i < this.user.applicationIDs.length; i++) {
+        if(applicationsT[Number(user.applicationIDs[i])].name.includes(value)){  
           let newTile = new Tile();
-          newTile.application = app;
+          newTile.application = applicationsT[Number(this.user.applicationIDs[i])];
           newTile.cols = 1;
           newTile.rows = 1;
-          this.tiles.push(newTile);
-          this.success=true;
+          this.tilesSearched.push(newTile);
         }
-        
       }
       
+      this.tiles = this.tilesSearched;
+      this.tilesSearched = [];
     }
   }
   public imageWhenEmpty(){

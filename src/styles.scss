@@ -2,7 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-form-field-infix {margin-left: 5px; font-size: 15px; font-style:"color: darkgrey;"}
+/*
 .mat-grid-tile-content{
     flex-direction: column;
 }
-.mat-form-field-infix {margin-left: 5px; font-size: 12px;}
+*/

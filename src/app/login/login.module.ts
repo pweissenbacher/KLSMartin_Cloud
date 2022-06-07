@@ -7,8 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 
-const routes: Routes = [{path: "", component: LoginComponent}]; 
-                        
+const routes: Routes = [{path: "", component: LoginComponent}];
 
 @NgModule({
   declarations: [LoginComponent],

@@ -4,6 +4,7 @@
 <span class="space"><img src="assets\Images\application.png" class="monitoricon">My Applications</span>
 <mat-grid-list cols="5" rowHeight="100px">
     <mat-grid-tile
+        
         *ngFor="let tile of tiles"
         (contextmenu)="onRightClick($event, tile.application.id)"
         [colspan]="tile.cols"
