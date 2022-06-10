@@ -27,6 +27,7 @@ export class BackgroundComponent implements OnInit, OnDestroy {
 
   user = new User();
   username: string = "";
+  success: boolean = false;
   applications: Application[];
   @ViewChild(MatMenuTrigger)trigger!: MatMenuTrigger;
   menuTopLeftPosition = {x: 0, y: 0};
