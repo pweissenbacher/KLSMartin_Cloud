@@ -150,15 +150,15 @@ export class BackgroundComponent implements OnInit, OnDestroy {
 
   public deleteApplication(id: string){
     for(let tmpAppID of this.user.applicationIDs) {
-      console.log(tmpAppID + ": " + id);
       if(tmpAppID===id) {
-        console.log(id + ": " + this.user.applicationIDs.indexOf(tmpAppID));
         this.user.applicationIDs[this.user.applicationIDs.indexOf(tmpAppID)]=this.user.applicationIDs[this.user.applicationIDs.length-1];
         this.user.applicationIDs[this.user.applicationIDs.length-1]=id;
         this.user.applicationIDs.pop();
       }
     }
-    console.log(this.user.applicationIDs)
+    if(this.user.applicationIDs.length<=0) {
+      this.success = false;
+    }
     this.userService.setLoggedInUser(this.user);
   }
 }
