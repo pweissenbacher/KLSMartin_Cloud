@@ -3,19 +3,25 @@
     <span class="space"><img src="assets\Images\settings.png" class="monitoricon">Available Applications</span>
 
     <br><br>
+    <mat-divider></mat-divider>
     <mat-nav-list class="rowApp" *ngFor="let app of applications">
         <img class="appPictures" [src]="app.imgpath" [alt]="app.name">
         <span class="appNames" matLine>{{app.name}}</span>
-        <div *ngIf="!user.applicationIDs.includes(app.id)" class="align-right">
-            <mat-icon>clear</mat-icon>
-        </div>
-        <div *ngIf="user.applicationIDs.includes(app.id)" class="align-right">
-            <mat-icon class="align-right">done</mat-icon>
-        </div>
 
         <button class="plusButton" mat-icon-button (click)="addApplication(app.id)" style="float: right;">
             <mat-icon>add</mat-icon>
         </button>
+
+        <div *ngIf="!user.applicationIDs.includes(app.id)" class="align-right">
+            <mat-icon>clear</mat-icon>
+        </div>
+
+
+        <div *ngIf="user.applicationIDs.includes(app.id)" class="align-right">
+            <mat-icon class="align-right">done</mat-icon>
+        </div>
+
+
         <mat-divider></mat-divider>
     </mat-nav-list>
 </div>
