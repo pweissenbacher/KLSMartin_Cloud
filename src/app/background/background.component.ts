@@ -4,6 +4,8 @@ import { UserService } from '../services/user.service';
 import { ApplicationsService } from '../services/applications.service';
 import { MatMenu, MatMenuTrigger, MatMenuModule } from '@angular/material/menu';
 import { trigger } from '@angular/animations';
+import { ApplogicService } from '../services/applogic.service';
+import { Subscription } from 'rxjs';
 //import { stringify } from 'querystring';
 
 
@@ -31,11 +33,18 @@ export class BackgroundComponent implements OnInit {
 
     
   
-
-  constructor(private userService: UserService, private applicationsService: ApplicationsService) {
+  searchApplicationSubscription: Subscription;
+  constructor(private userService: UserService, private applicationsService: ApplicationsService, private applogic: ApplogicService) {
     console.log(userService.getLoggedInUser());
     this.success = false;
     this.applications = applicationsService.getApplications();
+    this.user = userService.getLoggedInUser();
+    this.username = userService.getLoggedInUser().name;
+
+    this.searchApplicationSubscription = this.applogic.getInputInsertetEvent().subscribe((value: string) =>{
+      console.log(value);
+      this.initializeTiles(value);
+    })
   }
   ngOnInit(): void {
     this.userService.loggedInUserObservable.subscribe((user: User) => {
@@ -45,7 +54,10 @@ export class BackgroundComponent implements OnInit {
       this.imageWhenEmpty();
     });
   }
-
+  ngOnDestroy(): void {
+    this.searchApplicationSubscription.unsubscribe();
+  }
+  tilesSearched: Tile[] = [];
   tiles: Tile[] = [
     /*{application: this.applications[0], cols: 1, rows: 1},
     {application: this.applications[1], cols: 1, rows: 1},
@@ -65,22 +77,41 @@ export class BackgroundComponent implements OnInit {
 
   
 
-  public initializeTiles() {
-    this.tiles = [];
-    for(var app of this.applications){
-      for(var appID of this.user.applicationIDs) {
-        if(app.id==appID) {
-          let newTile = new Tile();
-          newTile.application = app;
-          newTile.cols = 1;
-          newTile.rows = 1;
-          this.tiles.push(newTile);
-          this.success=true;
+  
+  public initializeTiles(value: string = '') {
+      if(value == ''){
+        this.tiles = [];
+        
+        for(var app of this.applogic.getApplications()){
+          for(var appID of this.user.applicationIDs) {   
+            if(app.id == appID) {
+              let newTile = new Tile();
+              newTile.application = app;
+              newTile.cols = 1;
+              newTile.rows = 1;
+              this.success=true;
+              this.tiles.push(newTile);
+            }
+          } 
+        }
+      }else{
+        const user = this.userService.getLoggedInUser();
+        const applicationsT = this.applogic.getApplications();
+        this.tiles = [];
+  
+        for (let i = 0; i < this.user.applicationIDs.length; i++) {
+          if(applicationsT[Number(user.applicationIDs[i])].name.includes(value)){  
+            let newTile = new Tile();
+            newTile.application = applicationsT[Number(this.user.applicationIDs[i])];
+            newTile.cols = 1;
+            newTile.rows = 1;
+            this.tilesSearched.push(newTile);
+          }
         }
         
+        this.tiles = this.tilesSearched;
+        this.tilesSearched = [];
       }
-      
-    }
   }
   public imageWhenEmpty(){
    if(!this.success){
@@ -111,6 +142,9 @@ export class BackgroundComponent implements OnInit {
         this.user.applicationIDs[this.user.applicationIDs.length-1]=id;
         this.user.applicationIDs.pop();
       }
+    }
+    if(this.user.applicationIDs.length<=0) {
+      this.success = false;
     }
     console.log(this.user.applicationIDs)
     this.userService.setLoggedInUser(this.user);

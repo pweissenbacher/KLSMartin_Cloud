@@ -19,13 +19,13 @@ export class ApplogicService {
   }
 
   applications: Application[] = [
-    {id: '0', name: 'Roo', imgpath: 'assets\\Images\\roo.png'},
-    {id: '1', name: 'Tiger', imgpath: 'assets\\Images\\tiger.png'},
-    {id: '2', name: 'Poh', imgpath: 'assets\\Images\\poh.png'},
-    {id: '3', name: 'Eyyore', imgpath: 'assets\\Images\\eyyore.png'},
-    {id: '4', name: 'Piglet', imgpath: 'assets\\Images\\piglet.png'},
-    {id: '5', name: 'Junge', imgpath: 'assets\\Images\\junge.png'},
-    {id: '6', name: 'Honig', imgpath: 'assets\\Images\\honig.png'}
+    {id: '1', name: 'IPS Gate', imgpath: 'assets\\Images\\question_mark.png'},
+    {id: '2', name: 'IPS Automation Module', imgpath: 'assets\\Images\\IPSAutomationModule.png'},
+    {id: '3', name: 'IPS Orthognathic Module', imgpath: 'assets\\Images\\IPSOrthognathicModule.png'},
+    {id: '4', name: 'IPS Reconstruction Module', imgpath: 'assets\\Images\\question_mark.png'},
+    {id: '5', name: 'IPS Review Module', imgpath: 'assets\\Images\\question_mark.png'},
+    {id: '6', name: 'IPS Mission Control', imgpath: 'assets\\Images\\IPSMissionControl.png'},
+    {id: '7', name: 'Log Gate', imgpath: 'assets\\Images\\IPSLogGate.png'}
   ]
 
   public getApplications(){
