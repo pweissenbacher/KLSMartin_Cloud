@@ -1,16 +1,27 @@
 <br>
 <h1 style="font-size: 35px;" >Hello {{username}}</h1>
 <div class="background">
-<span class="space"><img src="assets\Images\monitor.png" class="monitoricon">My Applications:</span>
+<span class="space"><img src="assets\Images\application.png" class="monitoricon">My Applications</span>
 <mat-grid-list cols="5" rowHeight="100px">
     <mat-grid-tile
-        
         *ngFor="let tile of tiles"
-        
+        (contextmenu)="onRightClick($event, tile.application.id)"
         [colspan]="tile.cols"
         [rowspan]="tile.rows">
-        <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="tile-img">
-        <span class="tile-text">{{tile.application.name}}</span>
+        
+            <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="tile-img">
+            <span class="tile-text">{{tile.application.name}}</span>
+        
     </mat-grid-tile>
 </mat-grid-list>
+<div style="visibility: hidden; position: absolute;"[style.left.px]="menuTopLeftPosition.x" [style.top.px]="menuTopLeftPosition.y"[matMenuTriggerFor]="rightMenu">
+</div>
+<mat-menu #rightMenu="matMenu">
+    <ng-template matMenuContent let-item="item">
+        <button mat-menu-item (click)="deleteApplication(item.id)">
+            <mat-icon>clear</mat-icon>
+            {{item.content}}
+        </button>
+    </ng-template>
+</mat-menu>
 </div>

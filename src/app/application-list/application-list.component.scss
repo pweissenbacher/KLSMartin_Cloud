@@ -1,0 +1,51 @@
+.background{
+    background-color: white;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 55%;
+}
+
+.space{
+    margin-left: 1%;
+}
+
+.monitoricon {
+    height: 15px;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+
+.tile-img{
+    height: 10px;
+}
+
+.appPictures {
+    width: 1.8%;
+    top: 50%;
+    margin-left: 1%;
+    padding-right: 1.4%;
+}
+
+.appNames {
+    bottom: 50%;
+}
+
+.plusButton {
+    border: none;
+    background: none;
+}
+
+.plusButton:hover {
+    background-color: lightgray;
+}
+
+.plusButton:active {
+    background-color: lightcoral;
+}
+
+.align-right{
+    float: right;
+    margin-right: 1%;
+    border: none;
+    background: none;
+}
