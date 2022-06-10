@@ -12,12 +12,11 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 
 import { BackgroundComponent } from './background/background.component';
-
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSelectModule} from '@angular/material/select';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'; 
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatSelectModule } from '@angular/material/select'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
 import { FormsModule } from '@angular/forms';
 import { ApplicationListComponent } from './application-list/application-list.component';
 import {MatMenuModule} from '@angular/material/menu';
@@ -29,7 +28,6 @@ import {MatMenuModule} from '@angular/material/menu';
     HeaderComponent,
     BackgroundComponent,
     ApplicationListComponent,
-    
   ],
   
   imports: [
@@ -44,7 +42,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatGridListModule,
     MatDividerModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
