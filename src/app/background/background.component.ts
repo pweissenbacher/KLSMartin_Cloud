@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Application, User } from '../login/login.component';
 import { ApplogicService } from '../services/applogic.service';
 import { UserService } from '../services/user.service';
@@ -36,12 +36,12 @@ export class BackgroundComponent implements OnInit, OnDestroy {
   
 
   searchApplicationSubscription: Subscription;  
-  constructor(private userService: UserService, private applogic: ApplogicService) {
+  constructor(private userService: UserService, private applogic: ApplogicService, private applicationsService: ApplicationsService) {
     console.log(userService.getLoggedInUser());
     
     this.user = userService.getLoggedInUser();
     this.username = userService.getLoggedInUser().name;
-
+    this.applications = applicationsService.getApplications();
     this.searchApplicationSubscription = this.applogic.getInputInsertetEvent().subscribe((value: string) =>{
       console.log(value);
       this.initializeTiles(value);
