@@ -5,6 +5,20 @@
     height: 55%;
 }
 
+.requested-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.requested {
+    color: green;
+  }
+
+  &.not-requested {
+    color: red;
+  }
+}
+
 .space{
     margin-left: 1%;
 }

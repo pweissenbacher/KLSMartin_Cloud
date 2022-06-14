@@ -13,12 +13,19 @@
         </button>
 
         <div *ngIf="!user.applicationIDs.includes(app.id)" class="align-right">
+          <div class="requested-state not-requested">
             <mat-icon>clear</mat-icon>
+            <span>Not Requested</span>
+          </div>
         </div>
 
 
         <div *ngIf="user.applicationIDs.includes(app.id)" class="align-right">
+
+          <div class="requested-state requested">
             <mat-icon class="align-right">done</mat-icon>
+            <span>Requested</span>
+          </div>
         </div>
 
 
