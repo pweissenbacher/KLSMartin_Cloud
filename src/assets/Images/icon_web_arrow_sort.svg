@@ -1,0 +1,10 @@
+<svg id="icon_web_arrow_sort" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-2{fill:#9f9f9f}
+        </style>
+    </defs>
+    <path id="background" style="fill:none" d="M0 0h16v16H0z"/>
+    <path id="down" class="cls-2" d="m817.267 1584.992 3.238-4.411h-6.476z" transform="translate(-806.505 -1574.481)"/>
+    <path id="up" class="cls-2" d="m806.219 1579.559-3.238 4.411h6.476z" transform="translate(-800.981 -1574.059)"/>
+</svg>
