@@ -1,25 +1,25 @@
-<mat-toolbar class="background" style="width: 100%; height: 70px">
+<mat-toolbar class="background">
     
-    <button style="margin-right: 30px; margin-left: 10px;">
-        <img class="kastlimg" src="assets\Images\kastl.png" style="width: 27px; height: 25px;">
+    <button style="margin-right: 30px; margin-left: 16px;">
+        <img class="icon_web_burger_menu" src="assets\Images\icon_web_burger_menu.svg">
     </button>
 
-    <div style="margin-top: 12px; margin-right: 25px;">
-        <img class="logoimg" src="assets\Images\ips_header_logo_grey.svg" style="width: 115px; height: 55px;">
+    <div >
+        <img class="logo" src="assets\Images\ips_header_logo_grey.svg">
     </div>
 
-    <div style="margin-left: 12.5%">
+    <!-- <div style="margin-left: 12.5%">
         <form class="form_toolbar" style="width: 550%">
                 <mat-form-field class="removeUnderline full-width" style="width: 152%; height: 52.5px;">
                     <input matInput type="text" class="inputSearchbar" placeholder="Search" [(ngModel)]="searchApplicationName" name =  "searchApplicationName" (change)="searchApplikationSearchBar()">
                     <mat-icon matSuffix>mode_edit</mat-icon>
                 </mat-form-field>
         </form>
-    </div>
+    </div> -->
     
-    <div style="margin-left: 62%; margin-top: 10px;">
-        <button (click)="logout()" style= "height: 50px; width: 55px;">
-            <img class="profileimg" src="assets\Images\profile.png">
+    <div class="profile-btn">
+        <button (click)="logout()" style= "height: 32px; width: 32px;">
+            <img class="icon_web_thumbnail_user" src="assets\Images\icon_web_thumbnail_user.svg">
         </button>
     </div>
 </mat-toolbar>
