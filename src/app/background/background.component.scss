@@ -1,21 +1,144 @@
 .background{
-    background-color: white;
-    margin-left: 1%;
-    margin-right: 1%;
-    height: 65%;
+    width: 1892px;
+    height: 475px;
+    background-color: #ffffff;
+    margin-left: 14px;
+    margin-right: 16px;
+    margin-top: 24px;
+    padding-left: 32px;
+    padding-top: 32px;
 }
 
-.space{
-    margin-left: 1%;
+/*.background {
+    width: 1892px;
+    height: 475px;
+    margin: 24px 14px 16px;
+    padding: 32px 758px 64px 32px;
+    background-color: var(--white);
+  }*/
+
+img.icon_application {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
-.monitoricon {
-    height: 15px;
-    margin-right: 10px;
-    margin-top: 25px;
+img.icon_web_round_plus_small {
+  width: 18px;
+  height: 18px;
+  //margin: 1px 4px;
+  object-fit: contain;
 }
+
+.shadow {
+    width: 96px;
+    height: 96px;
+    //margin: 0 128px 12px;
+    //padding: 24px 36px 24px 36px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+}
+
+.border {
+    width: 96px;
+    height: 96px;
+    //margin-left: 48px;
+    //padding: 24px 36px 24px 36px;
+    border: solid 1px #e8e8e8;
+  }
 
 .tile-img{
-    height: 35%;
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
 }
+
+.tile-text {
+width: 352px;
+  height: 19px;
+  //margin: 12px 0 0;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+    color: #4d4d4d;
+}
+
+.Hello-User-Name {
+    width: 481px;
+    height: 71px;
+    margin-left: 48px;
+    //margin: 24px 1391px 24px 48px;
+    font-family: Roboto;
+    font-size: 60px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4d4d4d;
+  }
+
+.MyApplications {
+    width: 143px;
+    height: 24px;
+    //padding-bottom: 4px;
+    //padding-top: 4px;
+    //margin-top: 32px;
+    //margin: 4px 543px 4px 8px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4d4d4d;
+}
+
+img.placeholder_icon_plus {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 32px;
+    margin-left: 64px;
+    object-fit: contain;
+  }
+
+  .RequestText {
+    width: 346px;
+    height: 19px;
+    //margin: 12px 4px 0 0;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #9f9f9f;
+  }
+
+  .NoApplicationText {
+    width: 166px;
+    height: 24px;
+    margin: 32px 79px 12px 105px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4d4d4d;
+  }
+  
+  
 

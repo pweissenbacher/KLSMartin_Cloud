@@ -1,7 +1,7 @@
-<br>
-<h1 style="font-size: 35px;" >Hello {{username}}</h1>
+
+<span class="Hello-User-Name" >Hello {{username}}</span>
 <div class="background">
-<span class="space"><img src="assets\Images\application.png" class="monitoricon">My Applications</span>
+<img src="assets\Images\icon_application.svg" class="icon_application"><span class="MyApplications">My Applications</span>
 <mat-grid-list cols="5" rowHeight="100px">
     <mat-grid-tile
         *ngFor="let tile of tiles"
@@ -9,8 +9,19 @@
         [colspan]="tile.cols"
         [rowspan]="tile.rows">
         
-            <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="tile-img">
+        <div *ngIf="tile.application.id==='0'">
+            <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="placeholder_icon_plus"><br>
+            <span class="NoApplicationText">No Application Yet</span><br>
+            <span class="RequestText">Request application access below by pressing the </span>
+            <img class="icon_web_round_plus_small" src="assets\Images\icon_web_round_plus.svg" alt="add">
+            <span class="RequestText">.</span>
+        </div>
+
+        <div *ngIf="tile.application.id!='0'">
+            <div class="shadow border"><img [src]="tile.application.imgpath" [alt]="tile.application.name" class="tile-img"></div>
             <span class="tile-text">{{tile.application.name}}</span>
+        </div>
+            
         
     </mat-grid-tile>
 </mat-grid-list>
