@@ -4,13 +4,15 @@
     <br><br>
     <div style="margin-bottom: 34px; margin-left: 34px;">
         <span class="RequestText">Request application access by pressing the </span>
-        <img src="assets\Images\icon_web_round_plus.svg" alt="add">
+        <img class="icon_web_round_plus_small" src="assets\Images\icon_web_round_plus.svg" alt="add">
         <span class="RequestText">.</span><br>
         <span class="RequestText">The KLS Martin team will validate your requests. You will receive an email when activated.</span>
     </div>
-    <span class="name">Name</span>
-    <img src="assets\Images\icon_web_arrow_sort.svg" alt="" class="sort_arrow">
-
+    <div class="position-horizontal">
+        <span class="name">Name</span>
+        <img src="assets\Images\icon_web_arrow_sort.svg" alt="" class="sort_arrow">   
+    </div>
+    
     <mat-divider></mat-divider>
     <mat-nav-list *ngFor="let app of applications">
         <div class="position-horizontal">
@@ -21,24 +23,24 @@
             </div>
         </div>
         
-
-        <button class="plusButton" mat-icon-button (click)="addApplication(app.id)" style="float: right;">
-            <img class="icon_web_round_plus" src="assets\Images\icon_web_round_plus.svg" alt="add">
-        </button>
-
-        <div *ngIf="!user.applicationIDs.includes(app.id)" class="align-right">
-            <div class="position-vertical">
-                <img class="icon_web_round_plus" src="assets\Images\icon_web_round_warning.svg">
-                <span>Not Requested</span>
+        <div class="position-horizontal-right">
+            <div *ngIf="!user.applicationIDs.includes(app.id)" class="align-right">
+                <div class="position-vertical-center">
+                    <img class="icon_web_round_warning" src="assets\Images\icon_web_round_warning.svg">
+                    <span class="status">Not Requested</span>
+                </div>
             </div>
-        </div>
 
 
-        <div *ngIf="user.applicationIDs.includes(app.id)" class="align-right">
-            <div class="position-vertical">
-                <img class="icon_web_round_plus" src="assets\Images\icon_web_round_warning.svg">
-                <span>Requested</span>
+            <div *ngIf="user.applicationIDs.includes(app.id)" class="align-right">
+                <div class="position-vertical-center">
+                    <img class="icon_web_round_warning" src="assets\Images\icon_web_round_warning.svg">
+                    <span class="status">Requested</span>
+                </div>
             </div>
+            <button class="plusButton" mat-icon-button (click)="addApplication(app.id)">
+                <img class="icon_web_round_plus" src="assets\Images\icon_web_round_plus.svg" alt="add">
+            </button>
         </div>
 
 

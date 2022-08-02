@@ -30,7 +30,7 @@ img.icon_application_settings {
 
 .name {
     width: 28px;
-    height: 13px;
+    height: 16px;
     margin-left: 34px;
     font-family: TradeGothicNextLTPro-Rg;
     font-size: 10px;
@@ -47,6 +47,7 @@ img.sort_arrow {
     width: 16px;
     height: 16px;
     margin-left: 6px;
+    margin-bottom: 6px;
     object-fit: contain;
 }
 
@@ -127,12 +128,27 @@ img.icon_web_round_plus {
     height: 24px;
     //margin: 36px 20px 0 163px;
     object-fit: contain;
+}
+
+img.icon_web_round_plus_small {
+    width: 18px;
+    height: 18px;
+    //margin: 1px 4px;
+    object-fit: contain;
   }
+
+img.icon_web_round_warning {
+    width: 32px;
+    height: 32px;
+    //margin: 25px 186px 3px 1385px;
+    object-fit: contain;
+}
 
 
 .plusButton {
     width: 24px;
     height: 24px;
+    margin-left: 163px;
     border: none;
     background: none;
     //object-fit: contain;
@@ -149,12 +165,25 @@ img.icon_web_round_plus {
 .position-horizontal {
     display: inline-flex;
     flex-direction: row;
-
 }
 
 .position-vertical {
     display: inline-flex;
     flex-direction: column;
+}
+
+.position-vertical-center {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.position-horizontal-right {
+    display: inline-flex;
+    flex-direction: row;
+    float: right;
+    margin-right: 52px;
+    margin-top: 25px;
 }
 
 .align-right{
@@ -163,3 +192,18 @@ img.icon_web_round_plus {
     border: none;
     background: none;
 }
+
+.status {
+    width: 78px;
+    height: 11px;
+    //margin: 3px 163px 9px 1362px;
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: center;
+    color: #9f9f9f;
+  }
