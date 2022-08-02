@@ -118,7 +118,7 @@ export class BackgroundComponent implements OnInit {
       let newTile = new Tile();
       newTile.cols = 5;
       newTile.rows = 5;
-      newTile.application.imgpath = 'assets\\Images\\icon_plus.png';
+      newTile.application.imgpath = 'assets\\Images\\placeholder_icon_plus.svg';
       newTile.application.id = '0';
       newTile.application.name = 'No Apllication Yet';
       this.tiles.push(newTile);
