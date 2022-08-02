@@ -1,16 +1,21 @@
 .background{
+    width: 1892px;
+    height: 917px;
+    margin-top: 16px;
+    margin-left: 14px;
+    margin-bottom: 16px;
+    padding-left: 32px;
+    padding-bottom: 48px;
+    padding-top: 32px;
     background-color: #ffffff;
-    margin-left: 1%;
-    margin-right: 1%;
-    height: 55%;
 }
 
 img.icon_application_settings {
     width: 32px;
     height: 32px;
-    margin-right: 10px;
-    margin-top: 32px;
-    margin-left: 32px;
+    //margin-right: 10px;
+    //margin-top: 32px;
+    //margin-left: 32px;
     object-fit: contain;
 }
 
@@ -31,7 +36,7 @@ img.icon_application_settings {
 .name {
     width: 28px;
     height: 16px;
-    margin-left: 34px;
+    //margin-left: 34px;
     font-family: TradeGothicNextLTPro-Rg;
     font-size: 10px;
     font-weight: normal;
@@ -109,7 +114,7 @@ img.sort_arrow {
 .border {
     width: 64px;
     height: 64px;
-    margin-left: 48px;
+    //margin-left: 48px;
     margin-top: 16px;
     margin-bottom: 16px;
     //margin: 0 12px 0 0;
