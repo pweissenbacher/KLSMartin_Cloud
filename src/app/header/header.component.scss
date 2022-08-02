@@ -43,7 +43,7 @@ img.icon_web_thumbnail_user {
 }
 
 .logo-div {
-    width: 120px;
+    //width: 120px;
     height: 28px;
     align-self: center;
 }
@@ -57,7 +57,7 @@ img.icon_web_thumbnail_user {
 }
 
 .background {
-    width: 1920px;
+    //width: 1920px;
     height: 64px;
     margin-bottom: 24px;
     padding-top: 16px;
@@ -69,10 +69,10 @@ img.icon_web_thumbnail_user {
 }
 
 .position-items {
-    width: 1920px;
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
 /*.removeUnderline {
