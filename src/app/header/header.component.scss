@@ -28,12 +28,17 @@ img.icon_web_thumbnail_user {
     height: 32px;
     //margin: 0 0 0 836px;
     object-fit: contain;
-  }
+}
+
+.menu-btn {
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+}
 
 .profile-btn {
     width: 32px;
     height: 32px;
-    margin-top: 16px;
     justify-content: end;
 }
 
@@ -57,6 +62,15 @@ img.icon_web_thumbnail_user {
     //padding: 16px 32px 16px 32px;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
+}
+
+.position-items {
+    width: 1920px;
+    margin-bottom: 12px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
 }
 
 /*.removeUnderline {
