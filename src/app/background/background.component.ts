@@ -30,8 +30,9 @@ export class BackgroundComponent implements OnInit {
   applications: Application[];
   @ViewChild(MatMenuTrigger)trigger!: MatMenuTrigger;
   menuTopLeftPosition = {x: 0, y: 0};
+  breakpoint: number = 0;
+  rowHeight: number = 170;
 
-    
   
   searchApplicationSubscription: Subscription;
   constructor(private userService: UserService, private applicationsService: ApplicationsService, private applogic: ApplogicService) {
@@ -53,6 +54,26 @@ export class BackgroundComponent implements OnInit {
       this.initializeTiles();
       this.imageWhenEmpty();
     });
+    if(this.success) {
+      //this.breakpoint = (window.innerWidth <= 650) ? 3: 5;
+      this.rowHeight = 170;
+    } else {
+      this.rowHeight = 300;
+      //this.breakpoint = 1;
+    }
+    switch(true) {
+      case (window.innerWidth <= 480):
+        this.breakpoint = 1;
+        break;
+      case (window.innerWidth > 480 && window.innerWidth <= 640):
+        this.breakpoint = 2;
+        break;
+      case (window.innerWidth > 640 && window.innerWidth <= 992):
+        this.breakpoint = 3;
+        break;
+      default:
+        this.breakpoint = 5;
+    }
   }
   ngOnDestroy(): void {
     this.searchApplicationSubscription.unsubscribe();
@@ -75,7 +96,29 @@ export class BackgroundComponent implements OnInit {
     {application: this.applications[0], cols: 1, rows: 1}*/
   ];
 
-  
+  onResize(event: any) {
+    switch(true) {
+      case (window.innerWidth <= 480):
+        this.breakpoint = 1;
+        break;
+      case (window.innerWidth > 480 && window.innerWidth <= 640):
+        this.breakpoint = 2;
+        break;
+      case (window.innerWidth > 640 && window.innerWidth <= 992):
+        this.breakpoint = 3;
+        break;
+      default:
+        this.breakpoint = 5;
+    }
+
+    if(this.success) {
+      console.log(event)
+      //this.breakpoint = event.target.innerWidth <= 650 ? 3 : 5;
+    } else {
+      this.breakpoint = 1;
+    }
+  }
+
 
   
   public initializeTiles(value: string = '') {
@@ -112,17 +155,28 @@ export class BackgroundComponent implements OnInit {
         this.tiles = this.tilesSearched;
         this.tilesSearched = [];
       }
+      if(this.success) {
+        this.breakpoint = (window.innerWidth <= 650) ? 3: 5;
+        this.rowHeight = 170;
+      } else {
+        this.rowHeight = 300;
+        //this.breakpoint = 1;
+      }
+      console.log("initTiles: "+ this.user.applicationIDs);
   }
   public imageWhenEmpty(){
    if(!this.success){
       let newTile = new Tile();
-      newTile.cols = 5;
-      newTile.rows = 5;
+      newTile.cols = 1;
+      newTile.rows = 1;
       newTile.application.imgpath = 'assets\\Images\\placeholder_icon_plus.svg';
       newTile.application.id = '0';
       newTile.application.name = 'No Apllication Yet';
       this.tiles.push(newTile);
+      this.breakpoint = 1;
+      this.rowHeight = 300;
    }
+   console.log("imageWhenEmpty: "+ this.user.applicationIDs);
  }
   public onRightClick(event: MouseEvent, name: String) {
     event.preventDefault();
@@ -148,6 +202,26 @@ export class BackgroundComponent implements OnInit {
     }
     console.log(this.user.applicationIDs)
     this.userService.setLoggedInUser(this.user);
+    console.log("delApp: "+ this.user.applicationIDs);
+    switch(true) {
+      case (window.innerWidth <= 480):
+        this.breakpoint = 1;
+        break;
+      case (window.innerWidth > 480 && window.innerWidth <= 640):
+        this.breakpoint = 2;
+        break;
+      case (window.innerWidth > 640 && window.innerWidth <= 992):
+        this.breakpoint = 3;
+        break;
+      default:
+        this.breakpoint = 5;
+    }
+    if(this.success) {
+      console.log(event)
+      //this.breakpoint = event.target.innerWidth <= 650 ? 3 : 5;
+    } else {
+      this.breakpoint = 1;
+    }
   }
 }
 

@@ -1,12 +1,15 @@
 .background{
-    width: 1892px;
-    height: 475px;
+    // height: 475px;
     background-color: #ffffff;
     margin-left: 14px;
-    margin-right: 16px;
+    margin-right: 14px;
     margin-top: 24px;
     padding-left: 32px;
     padding-top: 32px;
+
+    ::ng-deep mat-grid-list mat-grid-tile .mat-grid-tile-content {
+      justify-content: start;
+    }
 }
 
 /*.background {
@@ -20,41 +23,27 @@
 img.icon_application {
     width: 32px;
     height: 32px;
+    margin-right: 8px;
     object-fit: contain;
 }
 
 img.icon_web_round_plus_small {
   width: 18px;
   height: 18px;
-  //margin: 1px 4px;
+  margin-left: 4px;
   object-fit: contain;
 }
-
-.shadow {
-    width: 96px;
-    height: 96px;
-    //margin: 0 128px 12px;
-    //padding: 24px 36px 24px 36px;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
-    background-color: #ffffff;
-}
-
-.border {
-    width: 96px;
-    height: 96px;
-    //margin-left: 48px;
-    //padding: 24px 36px 24px 36px;
-    border: solid 1px #e8e8e8;
-  }
 
 .tile-img{
     width: 96px;
     height: 96px;
-    object-fit: contain;
+    // object-fit: contain;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px #e8e8e8;
+    display: block;
 }
 
 .tile-text {
-width: 352px;
   height: 19px;
   //margin: 12px 0 0;
   font-family: Roboto;
@@ -69,7 +58,6 @@ width: 352px;
 }
 
 .Hello-User-Name {
-    width: 481px;
     height: 71px;
     margin-left: 48px;
     //margin: 24px 1391px 24px 48px;
@@ -85,7 +73,6 @@ width: 352px;
   }
 
 .MyApplications {
-    width: 143px;
     height: 24px;
     //padding-bottom: 4px;
     //padding-top: 4px;
@@ -105,13 +92,10 @@ width: 352px;
 img.placeholder_icon_plus {
     width: 260px;
     height: 260px;
-    margin-bottom: 32px;
-    margin-left: 64px;
     object-fit: contain;
   }
 
   .RequestText {
-    width: 346px;
     height: 19px;
     //margin: 12px 4px 0 0;
     font-family: Roboto;
@@ -126,9 +110,8 @@ img.placeholder_icon_plus {
   }
 
   .NoApplicationText {
-    width: 166px;
     height: 24px;
-    margin: 32px 79px 12px 105px;
+    //margin: 32px 79px 12px 105px;
     font-family: Roboto;
     font-size: 20px;
     font-weight: bold;
@@ -138,6 +121,22 @@ img.placeholder_icon_plus {
     letter-spacing: normal;
     text-align: center;
     color: #4d4d4d;
+  }
+
+  .position-center {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .align-horizontal {
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .flex-center {
+    display: inline-flex;
+    align-items: center;
   }
   
   

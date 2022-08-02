@@ -20,6 +20,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import { ApplicationListComponent } from './application-list/application-list.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDividerModule,
     MatListModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

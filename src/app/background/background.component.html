@@ -1,30 +1,65 @@
 
 <span class="Hello-User-Name" >Hello {{username}}</span>
 <div class="background">
-<img src="assets\Images\icon_application.svg" class="icon_application"><span class="MyApplications">My Applications</span>
-<mat-grid-list cols="5" rowHeight="100px">
+    <div class="flex-center">
+        <img src="assets\Images\icon_application.svg" class="icon_application">
+        <span class="MyApplications">My Applications</span>
+    </div>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" style="padding:10px" [gutterSize]="'10px'" (window:resize)="onResize($event)">
+    <mat-grid-tile fxFlexAlign="stretch" *ngFor="let tile of tiles" (contextmenu)="onRightClick($event, tile.application.id)">
+        <mat-card style="width: 100%; height: 90%" class="position-center">
+                        <img mat-card-image [src]="tile.application.imgpath" [style.max-width.px]="96">
+                <mat-card-content>
+                        <div><h3>{{tile.application.name}}</h3></div>
+                </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<!--<mat-grid-list [cols]="breakpoint" rowHeight="1:1" (window:resize)="onResize($event)">
     <mat-grid-tile
         *ngFor="let tile of tiles"
         (contextmenu)="onRightClick($event, tile.application.id)"
         [colspan]="tile.cols"
         [rowspan]="tile.rows">
-        
-        <div *ngIf="tile.application.id==='0'">
+        <mat-card *ngIf="tile.application.id==='0'" class="position-center">
+            <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="placeholder_icon_plus">
+            <mat-card-content class="position-center">
+                <span class="NoApplicationText">No Application Yet</span><br>
+                <div class="align-horizontal">
+                    <span class="RequestText">Request application access below by pressing the </span>
+                    <img class="icon_web_round_plus_small" src="assets\Images\icon_web_round_plus.svg" alt="add">
+                    <span class="RequestText">.</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card *ngIf="tile.application.id!='0'">
+            <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="tile-img">
+            <mat-card-content>
+                <span class="tile-text">{{tile.application.name}}</span>
+            </mat-card-content>
+        </mat-card>
+
+        <div *ngIf="tile.application.id==='0'" class="position-center">
             <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="placeholder_icon_plus"><br>
             <span class="NoApplicationText">No Application Yet</span><br>
-            <span class="RequestText">Request application access below by pressing the </span>
-            <img class="icon_web_round_plus_small" src="assets\Images\icon_web_round_plus.svg" alt="add">
-            <span class="RequestText">.</span>
+            <div class="align-horizontal">
+                <span class="RequestText">Request application access below by pressing the </span>
+                <img class="icon_web_round_plus_small" src="assets\Images\icon_web_round_plus.svg" alt="add">
+                <span class="RequestText">.</span>
+            </div>
         </div>
 
-        <div *ngIf="tile.application.id!='0'">
-            <div class="shadow border"><img [src]="tile.application.imgpath" [alt]="tile.application.name" class="tile-img"></div>
+        <ng-container *ngIf="tile.application.id!='0'">
+            <img [src]="tile.application.imgpath" [alt]="tile.application.name" class="tile-img">
             <span class="tile-text">{{tile.application.name}}</span>
-        </div>
+        </ng-container>
             
         
     </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->
+
 <div style="visibility: hidden; position: absolute;"[style.left.px]="menuTopLeftPosition.x" [style.top.px]="menuTopLeftPosition.y"[matMenuTriggerFor]="rightMenu">
 </div>
 <mat-menu #rightMenu="matMenu">
