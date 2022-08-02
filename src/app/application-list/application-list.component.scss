@@ -1,38 +1,141 @@
 .background{
-    background-color: white;
+    background-color: #ffffff;
     margin-left: 1%;
     margin-right: 1%;
     height: 55%;
 }
 
-.space{
-    margin-left: 1%;
-}
-
-.monitoricon {
-    height: 15px;
+img.icon_application_settings {
+    width: 32px;
+    height: 32px;
     margin-right: 10px;
-    margin-top: 25px;
+    margin-top: 32px;
+    margin-left: 32px;
+    object-fit: contain;
 }
 
-.tile-img{
-    height: 10px;
+.RequestText {
+    width: 346px;
+    height: 19px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #9f9f9f;
+  }
+
+.name {
+    width: 28px;
+    height: 13px;
+    margin-left: 34px;
+    font-family: TradeGothicNextLTPro-Rg;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: #9f9f9f;
 }
 
-.appPictures {
-    width: 1.8%;
-    top: 50%;
-    margin-left: 1%;
-    padding-right: 1.4%;
+img.sort_arrow {
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    object-fit: contain;
 }
 
-.appNames {
-    bottom: 50%;
+.AvailableApplications {
+    width: 196px;
+    height: 24px;
+    //margin: 0 1592px 36px 40px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4d4d4d;
 }
+
+.appName {
+    width: 250px;
+    height: 19px;
+    margin-top: 28px;
+    margin-left: 12px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    //text-align: left;
+    color: #e20303;
+}
+.description {
+    width: 89px;
+    height: 19px;
+    margin-left: 12px;
+    margin-top: 2px;
+    //margin: 2px 1362px 28px 12px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4d4d4d;
+}
+
+.shadow {
+    width: 64px;
+    height: 64px;
+    //margin: 0 12px 0 0;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+}
+
+.border {
+    width: 64px;
+    height: 64px;
+    margin-left: 48px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    //margin: 0 12px 0 0;
+    border: solid 1px #e8e8e8;
+}
+
+img.App-Icon {
+    width: 64px;
+    height: 64px;
+    //margin: 0 12px 0 0;
+    object-fit: contain;
+}
+
+img.icon_web_round_plus {
+    width: 24px;
+    height: 24px;
+    //margin: 36px 20px 0 163px;
+    object-fit: contain;
+  }
+
 
 .plusButton {
+    width: 24px;
+    height: 24px;
     border: none;
     background: none;
+    //object-fit: contain;
 }
 
 .plusButton:hover {
@@ -41,6 +144,17 @@
 
 .plusButton:active {
     background-color: lightcoral;
+}
+
+.position-horizontal {
+    display: inline-flex;
+    flex-direction: row;
+
+}
+
+.position-vertical {
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .align-right{
