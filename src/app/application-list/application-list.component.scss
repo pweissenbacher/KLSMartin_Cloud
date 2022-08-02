@@ -1,9 +1,10 @@
 .background{
-    width: 1892px;
+    //width: 1892px;
     height: 917px;
     margin-top: 16px;
     margin-left: 14px;
     margin-bottom: 16px;
+    margin-right: 14px;
     padding-left: 32px;
     padding-bottom: 48px;
     padding-top: 32px;
@@ -13,14 +14,13 @@
 img.icon_application_settings {
     width: 32px;
     height: 32px;
-    //margin-right: 10px;
+    margin-right: 8px;
     //margin-top: 32px;
     //margin-left: 32px;
     object-fit: contain;
 }
 
 .RequestText {
-    width: 346px;
     height: 19px;
     font-family: Roboto;
     font-size: 16px;
@@ -34,7 +34,6 @@ img.icon_application_settings {
   }
 
 .name {
-    width: 28px;
     height: 16px;
     //margin-left: 34px;
     font-family: TradeGothicNextLTPro-Rg;
@@ -57,7 +56,6 @@ img.sort_arrow {
 }
 
 .AvailableApplications {
-    width: 196px;
     height: 24px;
     //margin: 0 1592px 36px 40px;
     font-family: Roboto;
@@ -72,7 +70,6 @@ img.sort_arrow {
 }
 
 .appName {
-    width: 250px;
     height: 19px;
     margin-top: 28px;
     margin-left: 12px;
@@ -87,7 +84,6 @@ img.sort_arrow {
     color: #e20303;
 }
 .description {
-    width: 89px;
     height: 19px;
     margin-left: 12px;
     margin-top: 2px;
@@ -103,29 +99,15 @@ img.sort_arrow {
     color: #4d4d4d;
 }
 
-.shadow {
-    width: 64px;
-    height: 64px;
-    //margin: 0 12px 0 0;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
-    background-color: #ffffff;
-}
-
-.border {
-    width: 64px;
-    height: 64px;
-    //margin-left: 48px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    //margin: 0 12px 0 0;
-    border: solid 1px #e8e8e8;
-}
-
 img.App-Icon {
     width: 64px;
     height: 64px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     //margin: 0 12px 0 0;
     object-fit: contain;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px #e8e8e8;
 }
 
 img.icon_web_round_plus {
@@ -186,9 +168,9 @@ img.icon_web_round_warning {
 .position-horizontal-right {
     display: inline-flex;
     flex-direction: row;
-    float: right;
     margin-right: 52px;
     margin-top: 25px;
+    float: right;
 }
 
 .align-right{
@@ -199,7 +181,6 @@ img.icon_web_round_warning {
 }
 
 .status {
-    width: 78px;
     height: 11px;
     //margin: 3px 163px 9px 1362px;
     font-family: Roboto;
@@ -211,4 +192,10 @@ img.icon_web_round_warning {
     letter-spacing: normal;
     text-align: center;
     color: #9f9f9f;
+}
+
+.flex-center {
+    display: inline-flex;
+    align-items: center;
   }
+  

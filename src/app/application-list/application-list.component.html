@@ -1,12 +1,15 @@
 <div class="background">
-    <img src="assets\Images\icon_application_settings.svg" class="icon_application_settings"><span class="AvailableApplications">Available Applications</span>
+    <div class="flex-center">
+        <img src="assets\Images\icon_application_settings.svg" class="icon_application_settings">
+        <span class="AvailableApplications">Available Applications</span>
+    </div>
     <div style="margin-bottom: 33px; margin-top: 36px;">
         <span class="RequestText">Request application access by pressing the </span>
         <img class="icon_web_round_plus_small" src="assets\Images\icon_web_round_plus.svg" alt="add">
         <span class="RequestText">.</span><br>
         <span class="RequestText">The KLS Martin team will validate your requests. You will receive an email when activated.</span>
     </div>
-    <div class="position-horizontal">
+    <div class="flex-center">
         <span class="name">Name</span>
         <img src="assets\Images\icon_web_arrow_sort.svg" alt="" class="sort_arrow">   
     </div>
@@ -14,21 +17,21 @@
     <mat-divider></mat-divider>
     <mat-nav-list *ngFor="let app of applications">
         <div class="position-horizontal">
-            <div class="shadow border"><img class="App-Icon" [src]="app.imgpath" [alt]="app.name"></div>
+            <img class="App-Icon" [src]="app.imgpath" [alt]="app.name">
             <div class="position-vertical">
                 <span class="appName">{{app.name}}</span>
                 <span class="description" matLine>[Description]</span>
             </div>
         </div>
         
-        <div class="position-horizontal-right">
+        <div class="position-horizontal-right flex-center">
             <div *ngIf="!user.applicationIDs.includes(app.id)" class="align-right">
                 <div class="position-vertical-center">
                     <img class="icon_web_round_warning" src="assets\Images\icon_web_round_warning.svg">
                     <span class="status">Not Requested</span>
                 </div>
             </div>
-
+        
 
             <div *ngIf="user.applicationIDs.includes(app.id)" class="align-right">
                 <div class="position-vertical-center">
@@ -40,8 +43,6 @@
                 <img class="icon_web_round_plus" src="assets\Images\icon_web_round_plus.svg" alt="add">
             </button>
         </div>
-
-
         <mat-divider></mat-divider>
     </mat-nav-list>
 </div>
